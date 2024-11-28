@@ -92,6 +92,8 @@ select opt in "${options[@]}"; do
             break
             ;;
         "Reboot & Exit")
+            dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/$username"
+            rm -rf "/Volumes/Data/Users/$username"
             # Reboot & Exit
             echo "Rebooting..."
             reboot
