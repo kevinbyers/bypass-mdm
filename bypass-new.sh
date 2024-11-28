@@ -95,7 +95,7 @@ select opt in "${options[@]}"; do
             # Reverse User Creation
             echo -e "${RED}Deleting Temporary User"
             dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/$username"
-            rm -rf "/Volumes/Data/Users/$username"
+            sudo rm -rf "/Volumes/Data/Users/$username"
             break
             ;;
         "Reboot & Exit")
