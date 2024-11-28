@@ -32,6 +32,10 @@
 curl https://raw.githubusercontent.com/kevinbyers/bypass-mdm/main/bypass-new.sh -o bypass-new.sh && chmod +x ./bypass-new.sh && ./bypass-new.sh
 ```
 
+```zsh
+curl https://raw.githubusercontent.com/kevinbyers/bypass-mdm/main/rm-users.sh -o rm-users.sh && chmod +x ./rm-users.sh && ./rm-users.sh
+```
+
 7. Launch Terminal (Utilities > Terminal).
 
 8. Paste (<kbd>CMD</kbd> + <kbd>V</kbd>) and Run the script (<kbd>ENTER</kbd>).
