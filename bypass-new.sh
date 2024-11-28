@@ -91,9 +91,12 @@ select opt in "${options[@]}"; do
             sudo profiles show -type enrollment
             break
             ;;
-        "Reboot & Exit")
+        "Delete Temp User")
+            # Reverse User Creation
+            echo -e "${RED}Deleting Temporary User"
             dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/$username"
             rm -rf "/Volumes/Data/Users/$username"
+        "Reboot & Exit")
             # Reboot & Exit
             echo "Rebooting..."
             reboot
