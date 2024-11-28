@@ -104,6 +104,7 @@ select opt in "${options[@]}"; do
         "Clean up")
             # Reverse User Creation
             rm Volumes/Data/private/var/db/.AppleSetupDone
+            rm -i "/Volumes/Macintosh HD - Data/private/var/db/.AppleSetupDone"
             break
             ;;
         "Reboot & Exit")
