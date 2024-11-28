@@ -54,7 +54,7 @@ select opt in "${options[@]}"; do
             echo -e "${GRN}Successfully blocked MDM & Profile Domains"
 
             # Remove configuration profiles
-            touch /Volumes/Data/private/var/db/.AppleSetupDone
+            # touch /Volumes/Data/private/var/db/.AppleSetupDone
             rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord
             rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
             touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
@@ -96,6 +96,7 @@ select opt in "${options[@]}"; do
             echo -e "${RED}Deleting Temporary User"
             dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/$username"
             sudo rm -rf "/Volumes/Data/Users/$username"
+            sudo rm -rf "/Volumes/Data/Groups/"
             break
             ;;
         "Reboot & Exit")
