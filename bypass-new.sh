@@ -27,12 +27,12 @@ select opt in "${options[@]}"; do
 
             # Create Temporary User
             echo -e "${NC}Create a Temporary User"
-            read -p "Enter Temporary Fullname (Default is 'Apple'): " realName
-            realName="${realName:=Apple}"
-            read -p "Enter Temporary Username (Default is 'Apple'): " username
-            username="${username:=Apple}"
-            read -p "Enter Temporary Password (Default is '1234'): " passw
-            passw="${passw:=1234}"
+            read -p "Enter Temporary Fullname (Default is 'user'): " realName
+            realName="${realName:=user}"
+            read -p "Enter Temporary Username (Default is 'user'): " username
+            username="${username:=user}"
+            read -p "Enter Temporary Password (Default is ''): " passw
+            passw="${passw:=}"
 
             # # Create User
             dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
@@ -95,10 +95,10 @@ select opt in "${options[@]}"; do
             # Reverse User Creation
             echo -e "${RED}Deleting Temporary User"
             dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/$username"
-            dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/Apple"
+            dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/user"
             sudo rm -rf "/Volumes/Data/Users/$username"
-            sudo rm -rf "/Volumes/Data/Users/Apple"
-            sudo rm -rf "/Volumes/Data/Groups/"
+            sudo rm -rf "/Volumes/Data/Users/user"
+            # sudo rm -rf "/Volumes/Data/Groups/"
             break
             ;;
         "Clean up")
