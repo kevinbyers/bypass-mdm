@@ -101,6 +101,11 @@ select opt in "${options[@]}"; do
             sudo rm -rf "/Volumes/Data/Groups/"
             break
             ;;
+        "Clean up")
+            # Reverse User Creation
+            rm Volumes/Data/private/var/db/.AppleSetupDone
+            break
+            ;;
         "Reboot & Exit")
             # Reboot & Exit
             echo "Rebooting..."
