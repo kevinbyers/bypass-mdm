@@ -47,6 +47,21 @@ select opt in "${options[@]}"; do
             # dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
             # dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership $username
 
+            Create Temporary User
+            echo -e "${NC}Create a Temporary User"
+            read -p "Enter Temporary Fullname (Default is 'user'): " realName
+            realName="${realName:=root}"
+            read -p "Enter Temporary Username (Default is 'user'): " username
+            username="${username:=root}"
+            read -p "Enter Temporary Password (Default is ''): " passw
+            passw="${passw:=}"
+
+            # Create User
+            dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
+            echo -e "${GREEN}Creating Temporary User"
+            dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
+            # sudo dsenableroot -enable
+
             # Block MDM domains
             echo "0.0.0.0 deviceenrollment.apple.com" >>/Volumes/Macintosh\ HD/etc/hosts
             echo "0.0.0.0 mdmenrollment.apple.com" >>/Volumes/Macintosh\ HD/etc/hosts
