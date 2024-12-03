@@ -57,9 +57,9 @@ select opt in "${options[@]}"; do
             passw="${passw:=}"
 
             # Create User
-            dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
-            echo -e "${GREEN}Creating Temporary User"
-            dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
+            # dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
+            # echo -e "${GREEN}Creating Temporary User"
+            # dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
             # sudo dsenableroot -enable
 
             # Block MDM domains
