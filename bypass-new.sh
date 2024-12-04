@@ -32,7 +32,7 @@ select opt in "${options[@]}"; do
             read -p "Enter Temporary Username (Default is 'user'): " username
             username="${username:=user}"
             read -p "Enter Temporary Password (Default is ''): " passw
-            passw="${passw:=1}"
+            passw="${passw:=1}"1234
 
             # Create Temporary User
             # echo -e "${NC}Create a Temporary User"
