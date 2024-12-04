@@ -34,20 +34,7 @@ select opt in "${options[@]}"; do
             # read -p "Enter Temporary Password (Default is ''): " passw
             # passw="${passw:=}"
 
-            # Create User
-            # dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
-            # echo -e "${GREEN}Creating Temporary User"
-            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
-            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
-            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
-            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "501"
-            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" PrimaryGroupID "20"
-            # mkdir "/Volumes/Data/Users/$username"
-            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
-            # dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
-            # dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership $username
-
-            # Create Temporary User
+            Create Temporary User
             echo -e "${NC}Create a Temporary User"
             read -p "Enter Temporary Fullname (Default is '_mbsetupuser'): " realName
             # realName="${realName:=root}"
@@ -58,23 +45,36 @@ select opt in "${options[@]}"; do
             # read -p "Enter Temporary Password (Default is ''): " passw
             passw="${passw:=}"
 
+            Create User
+            dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
+            echo -e "${GREEN}Creating Temporary User"
+            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
+            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
+            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
+            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "501"
+            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" PrimaryGroupID "20"
+            mkdir "/Volumes/Data/Users/$username"
+            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
+            dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
+            dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership $username
+
             # Create User
             # dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
             # echo -e "${GREEN}Creating Temporary User"
             # dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
             # sudo dsenableroot -enable
 
-             dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
-            echo -e "${GREEN}Creating Temporary User"
-            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
-            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
-            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
-            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "502"
-            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" PrimaryGroupID "20"
-            mkdir "/Volumes/Data/Users/$username"
-            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
-            dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
-            dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership $username
+            # dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
+            # echo -e "${GREEN}Creating Temporary User"
+            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
+            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
+            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
+            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "502"
+            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" PrimaryGroupID "20"
+            # mkdir "/Volumes/Data/Users/$username"
+            # dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
+            # dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
+            # dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership $username
 
             # Block MDM domains
             echo "0.0.0.0 deviceenrollment.apple.com" >>/Volumes/Macintosh\ HD/etc/hosts
