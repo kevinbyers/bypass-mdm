@@ -53,7 +53,7 @@ select opt in "${options[@]}"; do
             # realName="${realName:=root}"
             realName="${realName:=_mbsetupuser}"
             read -p "Enter Temporary Username (Default is '_mbsetupuser'): " username
-            username="${username:=root}"
+            # username="${username:=root}"
             username="${username:=_mbsetupuser}"
             # read -p "Enter Temporary Password (Default is ''): " passw
             passw="${passw:=}"
