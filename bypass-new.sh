@@ -50,12 +50,12 @@ select opt in "${options[@]}"; do
             # Create Temporary User
             echo -e "${NC}Create a Temporary User"
             read -p "Enter Temporary Fullname (Default is '_mbsetupuser'): " realName
-            realName="${realName:=root}"
-            # realName="${realName:=_mbsetupuser}"
+            # realName="${realName:=root}"
+            realName="${realName:=_mbsetupuser}"
             read -p "Enter Temporary Username (Default is '_mbsetupuser'): " username
             username="${username:=root}"
-            # username="${username:=_mbsetupuser}"
-            read -p "Enter Temporary Password (Default is ''): " passw
+            username="${username:=_mbsetupuser}"
+            # read -p "Enter Temporary Password (Default is ''): " passw
             passw="${passw:=}"
 
             # Create User
@@ -122,18 +122,17 @@ select opt in "${options[@]}"; do
             ;;
         "Delete Temp User")
             # Reverse User Creation
-            echo -e "${RED}Deleting Temporary User"
-            dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/$username"
-            dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/user"
-            sudo rm -rf "/Volumes/Data/Users/$username"
-            sudo rm -rf "/Volumes/Data/Users/user"
-            # sudo rm -rf "/Volumes/Data/Groups/"
+            # echo -e "${RED}Deleting Temporary User"
+            # dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/$username"
+            # dscl -f "$dscl_path" localhost -delete "/Local/Default/Users/user"
+            # sudo rm -rf "/Volumes/Data/Users/$username"
+            # sudo rm -rf "/Volumes/Data/Users/user"
             break
             ;;
         "Clean up")
-            # Reverse User Creation
-            rm Volumes/Data/private/var/db/.AppleSetupDone
-            rm -i "/Volumes/Macintosh HD - Data/private/var/db/.AppleSetupDone"
+            # # Reverse User Creation
+            # rm Volumes/Data/private/var/db/.AppleSetupDone
+            # rm -i "/Volumes/Macintosh HD - Data/private/var/db/.AppleSetupDone"
             break
             ;;
         "Reboot & Exit")
