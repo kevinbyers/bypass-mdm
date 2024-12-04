@@ -28,9 +28,9 @@ select opt in "${options[@]}"; do
             Create Temporary User
             echo -e "${NC}Create a Temporary User"
             read -p "Enter Temporary Fullname (Default is 'user'): " realName
-            realName="${realName:=user}"
+            realName="${realName:=tmpuser}"
             read -p "Enter Temporary Username (Default is 'user'): " username
-            username="${username:=user}"
+            username="${username:=tmpuser}"
             read -p "Enter Temporary Password (Default is ''): " passw
             passw="${passw:=}"
 
