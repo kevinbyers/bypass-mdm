@@ -50,17 +50,18 @@ select opt in "${options[@]}"; do
             # Create Temporary User
             echo -e "${NC}Create a Temporary User"
             read -p "Enter Temporary Fullname (Default is '_mbsetupuser'): " realName
-            # realName="${realName:=root}"
-            realName="${realName:=_mbsetupuser}"
+            realName="${realName:=root}"
+            # realName="${realName:=_mbsetupuser}"
             read -p "Enter Temporary Username (Default is '_mbsetupuser'): " username
-            username="${username:=_mbsetupuser}"
+            username="${username:=root}"
+            # username="${username:=_mbsetupuser}"
             read -p "Enter Temporary Password (Default is ''): " passw
             passw="${passw:=}"
 
             # Create User
-            dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
-            echo -e "${GREEN}Creating Temporary User"
-            dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
+            # dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
+            # echo -e "${GREEN}Creating Temporary User"
+            # dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
             # sudo dsenableroot -enable
 
              dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
