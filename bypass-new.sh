@@ -48,7 +48,7 @@ select opt in "${options[@]}"; do
             Create User
             dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default'
             echo -e "${GREEN}Creating Temporary User"
-            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username"
+            dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" IsHidden 1
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "401"
